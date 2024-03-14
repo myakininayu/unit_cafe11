@@ -12,7 +12,7 @@ const Product = (props) => {
         <td min-height="200px">
             {// Пока кнопки не в отдельном компоненте
             }
-            <ButtonSection></ButtonSection>
+            <ButtonSection addItem={props.addItem} deleteItem={props.deleteItem} id={props.prodInfo.id}></ButtonSection>
         </td>
     </tr>
   );
