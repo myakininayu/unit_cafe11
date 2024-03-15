@@ -6,13 +6,11 @@ const Product = (props) => {
   return (
     <tr>
         <th scope="row">{props.prodInfo.id}</th>
-        <td>{props.prodInfo.name}"</td>
+        <td>"{props.prodInfo.name}"</td>
         <td><Image className={style.img} src={props.prodInfo.img} alt="Торт"></Image></td>
         <td>{props.prodInfo.price}₽</td>
         <td min-height="200px">
-            {// Пока кнопки не в отдельном компоненте
-            }
-            <ButtonSection></ButtonSection>
+            <ButtonSection prodInfo={props.prodInfo}></ButtonSection>
         </td>
     </tr>
   );

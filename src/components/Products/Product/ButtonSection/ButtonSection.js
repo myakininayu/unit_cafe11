@@ -1,10 +1,20 @@
-const ButtonSection = () => {
+import useStore from '../../../../store';
+import { Link } from 'react-router-dom';
+
+const ButtonSection = (props) => {
+
+  const delProduct = useStore((state) => state.delProduct);
+  
+
+  function deleteItem() {
+    delProduct(props.prodInfo.id)
+  }
+
+
   return (
     <div className="d-flex flex-row justify-content-center">
-        <form class="mx-2" action="./products_form.html">
-        <button type="submit" class="btn btn-primary">Изменить</button>
-        </form>
-        <button type="submit" class="btn btn-danger">Удалить</button>
+        <Link to="/products_form">Добавить продукт</Link>
+        <button type="submit" onClick={() => deleteItem()}class="btn btn-danger">Удалить</button>
     </div>
   );
 }
